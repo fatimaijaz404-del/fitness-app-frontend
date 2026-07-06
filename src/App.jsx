@@ -2,8 +2,9 @@ import { useState, useEffect } from 'react';
 import './App.css';
 
 function App() {
+  const [view, setView] = useState('home'); // 'home' | 'auth'
   const [isLogin, setIsLogin] = useState(false);
-  const [loggedInUser, setLoggedInUser] = useState(null); // yeh yaad rakhega kaun login hai
+  const [loggedInUser, setLoggedInUser] = useState(null);
 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -46,7 +47,7 @@ function App() {
       const data = await response.json();
 
       if (response.ok) {
-        setLoggedInUser(data.user); // user ko yaad rakh lo
+        setLoggedInUser(data.user);
         setMessage('');
       } else {
         setMessage(data.message || 'Something went wrong');
@@ -56,7 +57,6 @@ function App() {
     }
   };
 
-  // Calorie entry add karna
   const handleAddCalorie = async () => {
     try {
       const response = await fetch('https://fitness-app-backend-production-07df.up.railway.app/api/calories', {
@@ -72,14 +72,13 @@ function App() {
       if (response.ok) {
         setFoodName('');
         setCalories('');
-        fetchLogs(); // list ko refresh kar do
+        fetchLogs();
       }
     } catch (error) {
       console.log('Error adding calorie:', error);
     }
   };
 
-  // Saari entries fetch karna
   const fetchLogs = async () => {
     try {
       const response = await fetch(`https://fitness-app-backend-production-07df.up.railway.app/api/calories/${loggedInUser.id}`);
@@ -90,7 +89,6 @@ function App() {
     }
   };
 
-  // Jab user login ho jaye, uski entries load kar lo
   useEffect(() => {
     if (loggedInUser) {
       fetchLogs();
@@ -104,9 +102,40 @@ function App() {
     setEmail('');
     setPassword('');
     setLogs([]);
+    setView('home');
   };
 
-  // ---- AGAR USER LOGIN HAI, DASHBOARD DIKHAO ----
+  const goToLogin = () => {
+    setIsLogin(true);
+    setMessage('');
+    setView('auth');
+  };
+
+  const goToSignup = () => {
+    setIsLogin(false);
+    setMessage('');
+    setView('auth');
+  };
+
+  const goHome = () => {
+    setView('home');
+    setMessage('');
+  };
+
+  // ---- NAVBAR (shown on home + auth screens, not on dashboard) ----
+  const Navbar = () => (
+    <nav className="navbar">
+      <div className="nav-logo" onClick={goHome}>
+        thri<span>ve</span>
+      </div>
+      <div className="nav-links">
+        <button className="nav-btn nav-btn-ghost" onClick={goToLogin}>Login</button>
+        <button className="nav-btn nav-btn-solid" onClick={goToSignup}>Sign Up</button>
+      </div>
+    </nav>
+  );
+
+  // ---- DASHBOARD (logged in) ----
   if (loggedInUser) {
     return (
       <div className="app-container">
@@ -155,9 +184,37 @@ function App() {
     );
   }
 
-  // ---- AGAR USER LOGIN NAHI HAI, SIGNUP/LOGIN FORM DIKHAO ----
+  // ---- HOME / LANDING PAGE ----
+  if (view === 'home') {
+    return (
+      <div className="app-container home-container">
+        <Navbar />
+        <div className="hero">
+          <h1 className="hero-title">
+            thri<span>ve</span>
+          </h1>
+          <p className="hero-subtitle">Fuel your progress, one meal at a time.</p>
+          <p className="hero-description">
+            Track your daily calories, build better habits, and stay on top of your
+            fitness goals — all in one simple dashboard.
+          </p>
+          <div className="hero-actions">
+            <button className="primary-btn hero-btn" onClick={goToSignup}>
+              Get Started
+            </button>
+            <button className="nav-btn-ghost hero-btn-ghost" onClick={goToLogin}>
+              I already have an account
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // ---- AUTH (login/signup form) ----
   return (
     <div className="app-container">
+      <Navbar />
       <div className="card">
         <h1 className="brand-title">thri<span>ve</span></h1>
         <p className="brand-subtitle">Fuel your progress</p>

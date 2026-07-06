@@ -177,3 +177,118 @@ body {
   color: #EC4899;
   font-weight: 600;
 }
+
+/* ---- Navbar ---- */
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px;
+  z-index: 10;
+}
+
+.nav-logo {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+.nav-logo span {
+  background: linear-gradient(135deg, #EC4899 0%, #93C5FD 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.nav-links {
+  display: flex;
+  gap: 12px;
+}
+
+.nav-btn {
+  padding: 10px 22px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+.nav-btn-ghost {
+  background: rgba(255, 255, 255, 0.12);
+  color: #FFFFFF;
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+}
+
+.nav-btn-solid {
+  background: linear-gradient(135deg, #EC4899 0%, #3B82F6 100%);
+  color: #FFFFFF;
+}
+
+/* ---- Landing / hero ---- */
+.home-container {
+  flex-direction: column;
+  text-align: center;
+}
+
+.hero {
+  max-width: 640px;
+  padding: 24px;
+}
+
+.hero-title {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 56px;
+  color: #FFFFFF;
+  margin-bottom: 8px;
+}
+
+.hero-title span {
+  background: linear-gradient(135deg, #EC4899 0%, #93C5FD 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-subtitle {
+  font-size: 20px;
+  color: #F3F4F6;
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+
+.hero-description {
+  font-size: 15px;
+  color: #E5E7EB;
+  line-height: 1.6;
+  margin-bottom: 32px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.hero-btn {
+  width: 220px;
+}
+
+.hero-btn-ghost {
+  background: transparent;
+  color: #FFFFFF;
+  border: none;
+  text-decoration: underline;
+  font-size: 14px;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+}
