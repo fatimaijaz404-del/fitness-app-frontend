@@ -17,7 +17,7 @@ function App() {
 
   const handleSignup = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/signup', {
+      const response = await fetch('https://fitness-app-backend-production-07df.up.railway.app/api/signup', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, email, password }),
@@ -37,7 +37,7 @@ function App() {
 
   const handleLogin = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/login', {
+      const response = await fetch('https://fitness-app-backend-production-07df.up.railway.app/api/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password }),
@@ -59,7 +59,7 @@ function App() {
   // Calorie entry add karna
   const handleAddCalorie = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/calories', {
+      const response = await fetch('https://fitness-app-backend-production-07df.up.railway.app/api/calories', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -82,7 +82,7 @@ function App() {
   // Saari entries fetch karna
   const fetchLogs = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/api/calories/${loggedInUser.id}`);
+      const response = await fetch(`https://fitness-app-backend-production-07df.up.railway.app/api/calories/${loggedInUser.id}`);
       const data = await response.json();
       setLogs(data.logs);
     } catch (error) {
