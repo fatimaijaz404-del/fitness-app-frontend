@@ -111,7 +111,7 @@ function App() {
     return (
       <div className="app-container">
         <div className="card dashboard-card">
-          <h1 className="brand-title">FIT<span>TRACK</span></h1>
+          <h1 className="brand-title">thri<span>ve</span></h1>
           <p className="brand-subtitle">Welcome, {loggedInUser.name}!</p>
 
           <h2 className="form-title">Add Calorie Entry</h2>
@@ -159,8 +159,8 @@ function App() {
   return (
     <div className="app-container">
       <div className="card">
-        <h1 className="brand-title">FIT<span>TRACK</span></h1>
-        <p className="brand-subtitle">Get fit with Fatima's fitness platform</p>
+        <h1 className="brand-title">thri<span>ve</span></h1>
+        <p className="brand-subtitle">Fuel your progress</p>
 
         <h2 className="form-title">{isLogin ? 'LOGIN' : 'SIGN UP'}</h2>
 
