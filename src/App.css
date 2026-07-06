@@ -307,3 +307,127 @@ body {
   cursor: pointer;
   font-family: 'Poppins', sans-serif;
 }
+
+/* ---- Landing page: features + footer ---- */
+.features-section {
+  margin-top: 48px;
+  max-width: 800px;
+  padding: 0 24px;
+}
+
+.features-heading {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  color: #FFFFFF;
+  margin-bottom: 24px;
+}
+
+.features-grid {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.feature-card {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 14px;
+  padding: 20px;
+  width: 200px;
+  backdrop-filter: blur(6px);
+}
+
+.feature-card h3 {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 16px;
+  color: #FFFFFF;
+  margin-bottom: 8px;
+}
+
+.feature-card p {
+  font-size: 13px;
+  color: #E5E7EB;
+  line-height: 1.5;
+}
+
+.footer {
+  margin-top: 48px;
+  padding: 20px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 12px;
+}
+
+/* ---- Dashboard tabs ---- */
+.tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  background: #F3F4F6;
+  border-radius: 12px;
+  padding: 4px;
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  background: transparent;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #6B7280;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+}
+
+.tab-active {
+  background: linear-gradient(135deg, #EC4899 0%, #3B82F6 100%);
+  color: #FFFFFF;
+}
+
+/* ---- Food autocomplete ---- */
+.autocomplete-wrap {
+  position: relative;
+}
+
+.suggestions-dropdown {
+  position: absolute;
+  top: calc(100% - 10px);
+  left: 0;
+  right: 0;
+  background: #FFFFFF;
+  border: 1px solid #E5EBFF;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  z-index: 20;
+  max-height: 220px;
+  overflow-y: auto;
+}
+
+.suggestion-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 14px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.suggestion-item:hover {
+  background: #FAFBFF;
+}
+
+.suggestion-cal {
+  color: #EC4899;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+/* ---- Chart ---- */
+.chart-wrap {
+  background: #FAFBFF;
+  border-radius: 14px;
+  padding: 12px 4px 4px;
+  margin-bottom: 16px;
+}
