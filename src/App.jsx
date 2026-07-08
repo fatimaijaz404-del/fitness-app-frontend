@@ -200,6 +200,11 @@ function App() {
     setMessage('');
   };
 
+  const goToBlog = () => {
+    setView('blog');
+    setMessage('');
+  };
+
   // ---- Weekly chart data (last 7 days) ----
   const getWeeklyChartData = () => {
     const days = [];
@@ -233,6 +238,7 @@ function App() {
         thri<span>ve</span>
       </div>
       <div className="nav-links">
+        <button className="nav-btn nav-btn-ghost" onClick={goToBlog}>Tips</button>
         <button className="nav-btn nav-btn-ghost" onClick={goToAbout}>About</button>
         <button className="nav-btn nav-btn-ghost" onClick={goToLogin}>Login</button>
         <button className="nav-btn nav-btn-solid" onClick={goToSignup}>Sign Up</button>
@@ -396,6 +402,63 @@ function App() {
             Logout
           </button>
         </div>
+      </div>
+    );
+  }
+
+  // ---- BLOG / TIPS PAGE ----
+  if (view === 'blog') {
+    const tips = [
+      {
+        title: 'Drink water before every meal',
+        image: 'https://images.unsplash.com/photo-1533230091447-15b7f18b6281?auto=format&fit=crop&w=800&q=80',
+        text: 'A glass of water 15–20 minutes before eating helps with digestion and often reduces overeating, since thirst can easily be mistaken for hunger.',
+      },
+      {
+        title: 'Protein keeps you fuller for longer',
+        image: 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=800&q=80',
+        text: 'Adding a protein source — eggs, chicken, lentils, yogurt — to each meal slows digestion and helps control cravings later in the day.',
+      },
+      {
+        title: 'Short workouts still count',
+        image: 'https://images.unsplash.com/photo-1584827386894-fc939dad6078?auto=format&fit=crop&w=800&q=80',
+        text: "You don't need an hour at the gym. Three 10-minute walks or a quick 15-minute home workout add up over the week — consistency beats intensity.",
+      },
+      {
+        title: 'Sleep affects your appetite',
+        image: 'https://images.unsplash.com/photo-1519311965067-36d3e5f33d39?auto=format&fit=crop&w=800&q=80',
+        text: 'Poor sleep raises hunger hormones the next day. Aiming for 7–8 hours can make it noticeably easier to stick to your calorie goals.',
+      },
+    ];
+
+    return (
+      <div className="app-container home-container about-container">
+        <Navbar />
+
+        <div className="about-hero">
+          <h1 className="about-hero-title">
+            Tips & <span>Insights</span>
+          </h1>
+          <p className="about-hero-subtitle">
+            Small, practical habits that make tracking easier — no fad diets, no gimmicks.
+          </p>
+        </div>
+
+        <div className="blog-grid">
+          {tips.map((tip, idx) => (
+            <div className="blog-card" key={idx}>
+              <img className="blog-card-image" src={tip.image} alt={tip.title} />
+              <div className="blog-card-body">
+                <h3>{tip.title}</h3>
+                <p>{tip.text}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <footer className="footer">
+          <p>thrive · built with care · your fitness, tracked simply</p>
+        </footer>
       </div>
     );
   }
