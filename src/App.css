@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Quicksand:wght@600;700&display=swap');
 
 * {
   margin: 0;
@@ -430,4 +430,106 @@ body {
   border-radius: 14px;
   padding: 12px 4px 4px;
   margin-bottom: 16px;
+}
+
+/* ---- About page ---- */
+.about-container {
+  padding-top: 100px;
+  padding-bottom: 40px;
+}
+
+.about-hero {
+  max-width: 700px;
+  padding: 0 24px;
+  margin-bottom: 32px;
+}
+
+.about-hero-title {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+  color: #FFFFFF;
+  margin-bottom: 12px;
+}
+
+.about-hero-title span {
+  background: linear-gradient(135deg, #EC4899 0%, #93C5FD 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.about-hero-subtitle {
+  font-size: 16px;
+  color: #F3F4F6;
+  line-height: 1.6;
+}
+
+.about-image-wrap {
+  width: 100%;
+  max-width: 700px;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 32px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.about-image {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  display: block;
+}
+
+.about-section {
+  max-width: 700px;
+  padding: 0 24px;
+  margin-bottom: 32px;
+  text-align: left;
+}
+
+.about-section h2 {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  color: #FFFFFF;
+  margin-bottom: 12px;
+}
+
+.about-section p {
+  font-size: 14px;
+  color: #E5E7EB;
+  line-height: 1.7;
+}
+
+.about-grid {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 760px;
+  padding: 0 24px;
+  margin-bottom: 32px;
+}
+
+.about-card {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 14px;
+  padding: 20px;
+  width: 200px;
+  text-align: left;
+  backdrop-filter: blur(6px);
+}
+
+.about-card h3 {
+  font-size: 15px;
+  color: #FFFFFF;
+  margin-bottom: 8px;
+}
+
+.about-card p {
+  font-size: 12.5px;
+  color: #E5E7EB;
+  line-height: 1.5;
 }

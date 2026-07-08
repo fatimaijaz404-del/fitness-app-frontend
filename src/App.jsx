@@ -195,6 +195,11 @@ function App() {
     setMessage('');
   };
 
+  const goToAbout = () => {
+    setView('about');
+    setMessage('');
+  };
+
   // ---- Weekly chart data (last 7 days) ----
   const getWeeklyChartData = () => {
     const days = [];
@@ -228,6 +233,7 @@ function App() {
         thri<span>ve</span>
       </div>
       <div className="nav-links">
+        <button className="nav-btn nav-btn-ghost" onClick={goToAbout}>About</button>
         <button className="nav-btn nav-btn-ghost" onClick={goToLogin}>Login</button>
         <button className="nav-btn nav-btn-solid" onClick={goToSignup}>Sign Up</button>
       </div>
@@ -390,6 +396,78 @@ function App() {
             Logout
           </button>
         </div>
+      </div>
+    );
+  }
+
+  // ---- ABOUT PAGE ----
+  if (view === 'about') {
+    return (
+      <div className="app-container home-container about-container">
+        <Navbar />
+
+        <div className="about-hero">
+          <h1 className="about-hero-title">
+            About thri<span>ve</span>
+          </h1>
+          <p className="about-hero-subtitle">
+            A simple, free tool to help you understand what you eat and how you move.
+          </p>
+        </div>
+
+        <div className="about-image-wrap">
+          <img
+            className="about-image"
+            src="https://images.unsplash.com/photo-1631899477678-9d3c5aeded2d?auto=format&fit=crop&w=1200&q=80"
+            alt="Woman running outdoors for fitness"
+          />
+        </div>
+
+        <div className="about-section">
+          <h2>Why calorie tracking matters</h2>
+          <p>
+            A calorie is simply a unit of energy — it measures how much fuel your body
+            gets from food and how much it burns through movement. Tracking calories
+            isn't about restriction; it's about awareness. When you know what you're
+            eating and how active you've been, it becomes much easier to reach goals
+            like weight loss, muscle gain, or simply maintaining a steady, healthy
+            routine.
+          </p>
+        </div>
+
+        <div className="about-grid">
+          <div className="about-card">
+            <h3>🍎 Know your intake</h3>
+            <p>Logging meals daily builds awareness of portion sizes and hidden calories in everyday food.</p>
+          </div>
+          <div className="about-card">
+            <h3>🏃 Balance activity</h3>
+            <p>Pairing food intake with exercise helps you see the full picture — calories in vs. calories out.</p>
+          </div>
+          <div className="about-card">
+            <h3>📈 Track trends</h3>
+            <p>Weekly progress charts show patterns over time, not just single-day snapshots.</p>
+          </div>
+          <div className="about-card">
+            <h3>💧 Build habits</h3>
+            <p>Small, consistent logging habits lead to lasting lifestyle change — no crash diets needed.</p>
+          </div>
+        </div>
+
+        <div className="about-section">
+          <h2>Our approach</h2>
+          <p>
+            thrive was built to be simple and judgment-free. There are no ads, no
+            paywalls, and no complicated meal plans — just a clean space to log your
+            food, log your workouts, and see how they add up over the week. It's
+            designed for anyone starting their fitness journey, whether that's your
+            first week of tracking or your five-hundredth.
+          </p>
+        </div>
+
+        <footer className="footer">
+          <p>thrive · built with care · your fitness, tracked simply</p>
+        </footer>
       </div>
     );
   }
